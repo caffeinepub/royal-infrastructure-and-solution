@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts ── */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Royal Navy + Gold palette */
+    --background: 0.975 0.004 250;
+    --foreground: 0.12 0.025 255;
+
+    --card: 1 0 0;
+    --card-foreground: 0.14 0.022 255;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.14 0.022 255;
+
+    /* Navy primary */
+    --primary: 0.22 0.055 255;
+    --primary-foreground: 0.98 0 0;
+
+    /* Warm gold accent */
+    --accent: 0.76 0.148 72;
+    --accent-foreground: 0.12 0.025 90;
+
+    --secondary: 0.94 0.012 255;
+    --secondary-foreground: 0.22 0.055 255;
+
+    --muted: 0.955 0.008 250;
+    --muted-foreground: 0.52 0.022 255;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.89 0.014 255;
+    --input: 0.9 0.012 255;
+    --ring: 0.35 0.055 255;
+
+    /* Chart */
+    --chart-1: 0.22 0.055 255;
+    --chart-2: 0.76 0.148 72;
+    --chart-3: 0.55 0.18 270;
+    --chart-4: 0.65 0.12 160;
+    --chart-5: 0.72 0.15 30;
+
+    --sidebar: 0.97 0.008 255;
+    --sidebar-foreground: 0.14 0.022 255;
+    --sidebar-primary: 0.22 0.055 255;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.93 0.015 255;
+    --sidebar-accent-foreground: 0.22 0.055 255;
+    --sidebar-border: 0.89 0.014 255;
+    --sidebar-ring: 0.35 0.055 255;
+
+    /* Royal custom */
+    --gold: 0.76 0.148 72;
+    --navy-deep: 0.18 0.06 255;
+    --navy-mid: 0.26 0.055 255;
+  }
+
+  .dark {
+    --background: 0.115 0.028 255;
+    --foreground: 0.96 0.008 255;
+
+    --card: 0.16 0.035 255;
+    --card-foreground: 0.95 0.008 255;
+
+    --popover: 0.18 0.03 255;
+    --popover-foreground: 0.95 0.008 255;
+
+    --primary: 0.75 0.14 255;
+    --primary-foreground: 0.12 0.03 255;
+
+    --accent: 0.76 0.148 72;
+    --accent-foreground: 0.12 0.025 90;
+
+    --secondary: 0.22 0.04 255;
+    --secondary-foreground: 0.9 0.01 255;
+
+    --muted: 0.2 0.03 255;
+    --muted-foreground: 0.62 0.025 255;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.16 0.025 255;
+
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 12%;
+    --ring: 0.55 0.08 255;
+
+    --chart-1: 0.65 0.18 255;
+    --chart-2: 0.76 0.148 72;
+    --chart-3: 0.7 0.18 270;
+    --chart-4: 0.6 0.14 160;
+    --chart-5: 0.72 0.15 30;
+
+    --sidebar: 0.16 0.035 255;
+    --sidebar-foreground: 0.95 0.008 255;
+    --sidebar-primary: 0.75 0.14 255;
+    --sidebar-primary-foreground: 0.12 0.03 255;
+    --sidebar-accent: 0.22 0.04 255;
+    --sidebar-accent-foreground: 0.9 0.01 255;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.55 0.08 255;
+
+    --gold: 0.76 0.148 72;
+    --navy-deep: 0.12 0.04 255;
+    --navy-mid: 0.2 0.045 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Utility classes */
+.font-display {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.font-cabinet {
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, oklch(0.76 0.148 72), oklch(0.88 0.18 85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navy gradient */
+.bg-navy-gradient {
+  background: linear-gradient(135deg, oklch(0.18 0.06 255), oklch(0.24 0.07 240));
+}
+
+/* Card hover */
+.card-hover {
+  @apply transition-all duration-300;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px -8px oklch(0.22 0.055 255 / 0.18);
+}
+
+/* Hero overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    oklch(0.14 0.05 255 / 0.88) 0%,
+    oklch(0.22 0.06 240 / 0.75) 60%,
+    oklch(0.18 0.04 255 / 0.65) 100%
+  );
+}
